@@ -1,81 +1,26 @@
-ComfyUI-SimpleGoogleTranslate
-
-A lightweight text-translation node for ComfyUI.
-It provides an easy way to translate any text inside your workflow using Google Translate (googletrans).
-Useful for prompt translation, multilingual workflows, script generation, and automations.
-
-✨ Features
-
-Translate text directly inside ComfyUI
-
-Supports all languages available in googletrans
-
-Automatic source language detection (auto)
-
-Very small & fast — no API keys, no external setup
-
-Ideal for:
-
-translating prompts
-
-converting captions into another language
-
-combining with text-processing nodes
-
-workflows that require multilingual output
-
-📦 Installation
-
-Clone this repository into your ComfyUI custom_nodes directory:
-
-cd ComfyUI/custom_nodes
-git clone https://github.com/yourusername/ComfyUI-SimpleGoogleTranslate.git
-
-
-Install dependency:
-
-pip install googletrans==4.0.0-rc1
-
-
-Restart ComfyUI.
-
-🧩 Node Description
+SimpleGoogleTranslate for ComfyUI
+<p>A minimal and easy-to-use Google Translate text node for ComfyUI. This extension provides a simple interface to translate text directly inside your workflow using Google Translate.</p>
+🌟 Features
+<ul> <li><strong>Lightweight & Simple</strong>: Only one node — clean and easy to use.</li> <li><strong>Google Translate API (unofficial)</strong>: Uses the <code>googletrans</code> library.</li> <li><strong>Automatic Language Detection</strong>: Set <code>source_lang</code> to <code>auto</code>.</li> <li><strong>Full Language List Support</strong>: All languages supported by <code>googletrans.LANGUAGES</code>.</li> <li><strong>Multiline Input</strong>: Ideal for prompts, captions, or large text blocks.</li> </ul>
+🧩 Node Overview
 Simple Google Translate Text
-Input	Type	Description
-source_lang	dropdown	Input language (or "auto" for auto-detect)
-target_lang	dropdown	Translation language
-text	STRING	Text to translate
+<ul> <li><strong>Inputs</strong>: <ul> <li><code>source_lang</code>: original language (or <code>auto</code>)</li> <li><code>target_lang</code>: translation output language</li> <li><code>text</code>: content to translate</li> </ul> </li> <li><strong>Outputs</strong>: <ul> <li><code>translated</code> (STRING): translated text</li> </ul> </li> </ul>
+📦 Installation
+<ol> <li> <p>Clone or copy this folder into your ComfyUI <code>custom_nodes</code> directory:</p> <pre><code>cd ComfyUI/custom_nodes git clone https://github.com/yourname/ComfyUI-SimpleGoogleTranslate.git</code></pre> </li> <li> <p>Or manually create the folder:</p> <pre><code>ComfyUI/custom_nodes/ComfyUI_SimpleGoogleTranslate/</code></pre> </li> <li> <p>Restart ComfyUI</p> </li> </ol>
+📚 Requirements
+<ul> <li><code>googletrans==4.0.0-rc1</code></li> </ul> <p>This package will auto-install when ComfyUI loads the extension, as long as your folder contains:</p>
+requirements.txt
 
-Output:
-
-Output	Type	Description
-translated	STRING	Translated result
-📁 Repository Structure
-ComfyUI-SimpleGoogleTranslate/
+📁 File Structure
+ComfyUI_SimpleGoogleTranslate/
 │
-├── simple_google_translate.py
 ├── __init__.py
-├── requirements.txt
-└── README.md
+├── simple_google_translate.py
+└── requirements.txt
 
-📝 Requirements
-
-ComfyUI
-
-googletrans==4.0.0-rc1
-
-✔️ Notes
-
-googletrans は API キー不要で使えますが、Google 側の仕様変更により一時的に不安定になることがあります。その場合は再試行してください。
-
-ノードは utils/Text カテゴリに追加されます。
-
-📸 Example
-
-（あなたが貼ってくれたスクショのように、翻訳前後を Show Text でつなげた画像を残せます。）
-
-👍 License
-
-Free to use, modify, and include in any workflow.
-
-Happy translating!
+📝 Example Workflow
+<p><img src="./img/example_workflow.png" alt="Workflow Example"></p>
+⚠️ Notes
+<ul> <li>This extension uses <code>googletrans</code>, an unofficial Google Translate API.</li> <li>If translation stops working, Google may have updated their service.</li> <li>For production use, consider official APIs such as DeepL or Google Cloud Translate.</li> </ul>
+📄 License
+<p>Free to use, modify, and integrate into your own projects. Attribution is not required but appreciated. 🙂</p>
