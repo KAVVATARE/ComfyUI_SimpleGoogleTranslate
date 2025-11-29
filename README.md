@@ -6,17 +6,19 @@
 Simple Google Translate Text
 <ul> <li><strong>Inputs</strong>: <ul> <li><code>source_lang</code>: original language (or <code>auto</code>)</li> <li><code>target_lang</code>: translation output language</li> <li><code>text</code>: content to translate</li> </ul> </li> <li><strong>Outputs</strong>: <ul> <li><code>translated</code> (STRING): translated text</li> </ul> </li> </ul>
 📦 Installation
-<ol> <li> <p>Clone or copy this folder into your ComfyUI <code>custom_nodes</code> directory:</p> <pre><code>cd ComfyUI/custom_nodes git clone https://github.com/yourname/ComfyUI-SimpleGoogleTranslate.git</code></pre> </li> <li> <p>Or manually create the folder:</p> <pre><code>ComfyUI/custom_nodes/ComfyUI_SimpleGoogleTranslate/</code></pre> </li> <li> <p>Restart ComfyUI</p> </li> </ol>
+<ol> <li> <p>Clone or copy this folder into your ComfyUI <code>custom_nodes</code> directory:</p> <pre><code>cd ComfyUI/custom_nodes <br>
+git clone https://github.com/yourname/ComfyUI-SimpleGoogleTranslate.git</code></pre> </li> <li> 
+<p>Or manually create the folder:</p> <pre><code>ComfyUI/custom_nodes/ComfyUI_SimpleGoogleTranslate/</code></pre> </li> <li> <p>Restart ComfyUI</p> </li> </ol>
 📚 Requirements
 <ul> <li><code>googletrans==4.0.0-rc1</code></li> </ul> <p>This package will auto-install when ComfyUI loads the extension, as long as your folder contains:</p>
 requirements.txt
 
 📁 File Structure
-ComfyUI_SimpleGoogleTranslate/
-│
-├── __init__.py
-├── simple_google_translate.py
-└── requirements.txt
+ComfyUI_SimpleGoogleTranslate/<br>
+│<br>
+├── __init__.py<br>
+├── simple_google_translate.py<br>
+└── requirements.txt<br>
 
 📝 Example Workflow
 <p><img src="./example_workflow.png" alt="Workflow Example"></p>
