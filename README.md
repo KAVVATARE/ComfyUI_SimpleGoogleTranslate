@@ -1,4 +1,4 @@
-<h1>SimpleGoogleTranslate for ComfyUI</h1>h1>
+<h1>SimpleGoogleTranslate for ComfyUI</h1>
 <p>A minimal and easy-to-use Google Translate text node for ComfyUI. This extension provides a simple interface to translate text directly inside your workflow using Google Translate.</p>
 🌟 Features
 <ul> <li><strong>Lightweight & Simple</strong>: Only one node — clean and easy to use.</li> <li><strong>Google Translate API (unofficial)</strong>: Uses the <code>googletrans</code> library.</li> <li><strong>Automatic Language Detection</strong>: Set <code>source_lang</code> to <code>auto</code>.</li> <li><strong>Full Language List Support</strong>: All languages supported by <code>googletrans.LANGUAGES</code>.</li> <li><strong>Multiline Input</strong>: Ideal for prompts, captions, or large text blocks.</li> </ul>
