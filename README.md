@@ -19,7 +19,7 @@ ComfyUI_SimpleGoogleTranslate/
 └── requirements.txt
 
 📝 Example Workflow
-<p><img src="./img/example_workflow.png" alt="Workflow Example"></p>
+<p><img src="./example_workflow.png" alt="Workflow Example"></p>
 ⚠️ Notes
 <ul> <li>This extension uses <code>googletrans</code>, an unofficial Google Translate API.</li> <li>If translation stops working, Google may have updated their service.</li> <li>For production use, consider official APIs such as DeepL or Google Cloud Translate.</li> </ul>
 📄 License
