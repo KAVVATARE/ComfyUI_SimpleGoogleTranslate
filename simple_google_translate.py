@@ -1,6 +1,9 @@
-from googletrans import Translator, LANGUAGES
+from deep_translator import GoogleTranslator
 
-translator = Translator()
+# LANGUAGES辞書はdeep-translatorの形式に合わせて取得
+_LANG_DICT = GoogleTranslator().get_supported_languages(as_dict=True)  # {'english': 'en', ...}
+_LANG_CODES = list(_LANG_DICT.values())
+
 
 class SimpleGoogleTranslateTextNode:
     """
@@ -12,11 +15,11 @@ class SimpleGoogleTranslateTextNode:
         return {
             "required": {
                 "source_lang": (
-                    ["auto"] + list(LANGUAGES.keys()),
+                    ["auto"] + _LANG_CODES,
                     {"default": "auto"},
                 ),
                 "target_lang": (
-                    list(LANGUAGES.keys()),
+                    _LANG_CODES,
                     {"default": "en"},
                 ),
                 "text": ("STRING", {"multiline": True, "placeholder": "Input text"}),
@@ -31,10 +34,10 @@ class SimpleGoogleTranslateTextNode:
     def translate_text(self, source_lang, target_lang, text):
         if not text.strip():
             return ("",)
-
         try:
-            result = translator.translate(text, src=source_lang, dest=target_lang)
-            return (result.text,)
+            translator = GoogleTranslator(source=source_lang, target=target_lang)
+            result = translator.translate(text)
+            return (result,)
         except Exception as e:
             return (f"[Translation error] {e}",)
 
@@ -42,7 +45,6 @@ class SimpleGoogleTranslateTextNode:
 NODE_CLASS_MAPPINGS = {
     "SimpleGoogleTranslateTextNode": SimpleGoogleTranslateTextNode
 }
-
 NODE_DISPLAY_NAME_MAPPINGS = {
     "SimpleGoogleTranslateTextNode": "Simple Google Translate Text"
 }
