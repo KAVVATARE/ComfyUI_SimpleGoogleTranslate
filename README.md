@@ -1,28 +1,73 @@
-<h1>SimpleGoogleTranslate for ComfyUI</h1>
-<p>A minimal and easy-to-use Google Translate text node for ComfyUI. This extension provides a simple interface to translate text directly inside your workflow using Google Translate.</p>
-🌟 Features
-<ul> <li><strong>Lightweight & Simple</strong>: Only one node — clean and easy to use.</li> <li><strong>Google Translate API (unofficial)</strong>: Uses the <code>googletrans</code> library.</li> <li><strong>Automatic Language Detection</strong>: Set <code>source_lang</code> to <code>auto</code>.</li> <li><strong>Full Language List Support</strong>: All languages supported by <code>googletrans.LANGUAGES</code>.</li> <li><strong>Multiline Input</strong>: Ideal for prompts, captions, or large text blocks.</li> </ul>
-🧩 Node Overview
-Simple Google Translate Text
-<ul> <li><strong>Inputs</strong>: <ul> <li><code>source_lang</code>: original language (or <code>auto</code>)</li> <li><code>target_lang</code>: translation output language</li> <li><code>text</code>: content to translate</li> </ul> </li> <li><strong>Outputs</strong>: <ul> <li><code>translated</code> (STRING): translated text</li> </ul> </li> </ul>
-📦 Installation
-<ol> <li> <p>Clone or copy this folder into your ComfyUI <code>custom_nodes</code> directory:</p> <pre><code>cd ComfyUI/custom_nodes <br>
-git clone https://github.com/yourname/ComfyUI-SimpleGoogleTranslate.git</code></pre> </li> <li> 
-<p>Or manually create the folder:</p> <pre><code>ComfyUI/custom_nodes/ComfyUI_SimpleGoogleTranslate/</code></pre> </li> <li> <p>Restart ComfyUI</p> </li> </ol>
-📚 Requirements
-<ul> <li><code>googletrans==4.0.0-rc1</code></li> </ul> <p>This package will auto-install when ComfyUI loads the extension, as long as your folder contains:</p>
+# SimpleGoogleTranslate for ComfyUI
+
+A minimal and easy-to-use Google Translate text node for ComfyUI. This extension provides a simple interface to translate text directly inside your workflow using Google Translate.
+
+## 🌟 Features
+
+- **Lightweight & Simple**: Only one node — clean and easy to use.
+- **Google Translate (unofficial)**: Uses the [`deep-translator`](https://github.com/nidhaloff/deep-translator) library's `GoogleTranslator` backend.
+- **Automatic Language Detection**: Set `source_lang` to `auto`.
+- **Full Language List Support**: All languages supported by `deep_translator.GoogleTranslator`.
+- **Multiline Input**: Ideal for prompts, captions, or large text blocks.
+
+## 🧩 Node Overview
+
+### Simple Google Translate Text
+
+- **Inputs**:
+  - `source_lang`: original language (or `auto`)
+  - `target_lang`: translation output language
+  - `text`: content to translate
+- **Outputs**:
+  - `translated` (STRING): translated text
+
+## 📦 Installation
+
+1. Clone or copy this folder into your ComfyUI `custom_nodes` directory:
+
+   ```bash
+   cd ComfyUI/custom_nodes
+   git clone https://github.com/KAVVATARE/ComfyUI-SimpleGoogleTranslate.git
+   ```
+
+2. Or manually create the folder:
+
+   ```
+   ComfyUI/custom_nodes/ComfyUI_SimpleGoogleTranslate/
+   ```
+
+3. Restart ComfyUI
+
+## 📚 Requirements
+
+- `deep-translator>=1.11.4`
+
+This package will auto-install when ComfyUI loads the extension, as long as your folder contains:
+
+```
 requirements.txt
+```
 
-📁 File Structure
-ComfyUI_SimpleGoogleTranslate/<br>
-│<br>
-├── __init__.py<br>
-├── simple_google_translate.py<br>
-└── requirements.txt<br>
+## 📁 File Structure
 
-📝 Example Workflow
-<p><img src="./example_workflow.png" alt="Workflow Example"></p>
-⚠️ Notes
-<ul> <li>This extension uses <code>googletrans</code>, an unofficial Google Translate API.</li> <li>If translation stops working, Google may have updated their service.</li> <li>For production use, consider official APIs such as DeepL or Google Cloud Translate.</li> </ul>
-📄 License
-<p>Free to use, modify, and integrate into your own projects. Attribution is not required but appreciated. 🙂</p>
+```
+ComfyUI_SimpleGoogleTranslate/
+│
+├── __init__.py
+├── simple_google_translate.py
+└── requirements.txt
+```
+
+## 📝 Example Workflow
+
+![Workflow Example](./example_workflow.png)
+
+## ⚠️ Notes
+
+- This extension uses `deep-translator`'s Google Translate backend, an unofficial Google Translate interface.
+- If translation stops working, Google may have updated their service.
+- For production use, consider official APIs such as DeepL or Google Cloud Translate.
+
+## 📄 License
+
+Free to use, modify, and integrate into your own projects. Attribution is not required but appreciated. 🙂
